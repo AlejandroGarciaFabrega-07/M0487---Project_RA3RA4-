@@ -4,13 +4,12 @@ import 'package:shop/src/constants.dart';
 class Product {
   final int id;
   final String name;
-
   final double price;
 
   Product(this.id, this.name,this.price);
 
   @override
-  String toString() => '${AppConstants.productFormat}$id: $name - \$$price';
+  String toString() => '${AppConstants.productFormat}$id: $name - $price';
 }
 
 /// Calculates the total price of items in the cart
@@ -18,7 +17,7 @@ class Product {
 /// [cart] The list of products in the cart
 /// Returns the sum of all product prices
 double calculateSubtotal(List<Product> cart) {
-  double subtotal = 10.0;
+  double subtotal = 0;
   for (var product in cart) {
     subtotal += product.price;
   }
