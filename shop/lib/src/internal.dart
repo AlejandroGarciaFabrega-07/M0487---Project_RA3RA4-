@@ -17,7 +17,7 @@ class Product {
 /// [cart] The list of products in the cart
 /// Returns the sum of all product prices
 double calculateSubtotal(List<Product> cart) {
-  double subtotal = 10.0;
+  double subtotal = 0;
   for (var product in cart) {
     subtotal += product.price;
   }
@@ -47,7 +47,7 @@ double getDiscountRate(int cartLength) {
 /// [discountRate] The discount rate as a decimal
 /// Returns the discount amount
 double calculateDiscountAmount(double subtotal, double discountRate) {
-  return subtotal * discountRate.toInt();
+  return subtotal * discountRate;
 }
 
 /// Calculates the final total after discount
